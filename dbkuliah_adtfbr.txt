@@ -1,0 +1,45 @@
+MariaDB [dbkuliah_adtfbr]> desc jurusan;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int(11)     | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(30) | NO   | UNI | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+2 rows in set (0.349 sec)
+
+MariaDB [dbkuliah_adtfbr]> desc mahasiswa;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nim       | int(11)      | NO   |     | NULL    |                |
+| nama      | varchar(50)  | NO   | UNI | NULL    |                |
+| alamat    | varchar(100) | NO   |     | NULL    |                |
+| idjurusan | int(11)      | NO   |     | NULL    |                |
+| foto      | varchar(30)  | YES  |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.118 sec)
+
+MariaDB [dbkuliah_adtfbr]> select * from jurusan order by id;
++----+--------------------+
+| id | nama               |
++----+--------------------+
+|  1 | Sistem Informasi   |
+|  2 | Teknik Informatika |
+|  3 | Bisnis Digital     |
+|  4 | Teknik Sipil       |
+|  5 | Akuntansi          |
++----+--------------------+
+5 rows in set (0.012 sec)
+
+MariaDB [dbkuliah_adtfbr]> select * from mahasiswa;
++----+-----------+------------------------+---------------------------------------------+-----------+------------+
+| id | nim       | nama                   | alamat                                      | idjurusan | foto       |
++----+-----------+------------------------+---------------------------------------------+-----------+------------+
+|  1 | 110223074 | Aditya Febriadi        | Jln Akasia IV No 123 Rt 01 RW 02 Kota Depok |         2 | adtfbr.jpg |
+|  2 | 110223065 | Faturahman Alfarisi    | Bogor                                       |         2 | fatur.jpg  |
+|  3 | 110223073 | Yoshi Indra Kusuma     | Bojong                                      |         2 | yoshi.jpg  |
+|  4 | 110223078 | Fajar Muhamad          | Gn.Putri                                    |         2 | fajar.jpg  |
+|  5 | 110223053 | Muhammad Andhika Thata | Bojong                                      |         2 | dika.jpg   |
++----+-----------+------------------------+---------------------------------------------+-----------+------------+
+5 rows in set (0.002 sec)
